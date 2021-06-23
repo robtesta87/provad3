@@ -53,7 +53,7 @@ function JSONtoString(){
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
-    var parse = d3.time.format("%d%m%Y").parse;
+    var parse = d3.time.format("%Y").parse;
 
 
 // Transpose the data into layers
