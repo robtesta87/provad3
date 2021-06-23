@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>CSV to json4</title>
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+</head>
+
+<body>
+  <script type="text/javascript" src= "csvtojson.js"></script>
+  <script type="text/javascript">
+    var righe = [];
+    console.log("eccomi");
+    d3.csv("http://localhost:9000/prova.csv", function (data2) {
+      for (var i = 0; i < data2.length; i++) {
+        righe.push(data2[i]);
+      }
+    });
+    console.log("length"+righe.length);
+    var stringa="day,scarico,elaborazione\n";
+    for (var i=0;i<righe.length; i++) {
+      console.log(righe[i].day);
+      if (i<righe.length-1)
+        stringa=stringa+righe[i].day+","+righe[i].scarico+","+righe[i].elaborazione+"\n";
+      else  
+        stringa=stringa+righe[i].day+","+righe[i].scarico+","+righe[i].elaborazione;
+      
+    }
+  </script>
+
+</script>
+</body>
+
+</html>
