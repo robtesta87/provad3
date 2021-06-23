@@ -142,8 +142,8 @@ legend.append("text")
   .style("text-anchor", "start")
   .text(function (d, i) {
     switch (i) {
-      case 0: return "scarico";
-      case 1: return "elaborazione";
+      case 0: return "elaborazione";
+      case 1: return "scarico";
     }
   });
 
