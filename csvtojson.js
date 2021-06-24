@@ -38,8 +38,9 @@ function JSONtoString(){
         stringa = stringa + righe[i].day + "," + righe[i].scarico + "," + righe[i].elaborazione;
 
     }
-    //var data= csvJSON(stringa);
-    var data=righe;
+    var data= csvJSON(stringa);
+    //var data=righe;
+
     console.log(data);
     var margin = { top: 20, right: 160, bottom: 35, left: 30 };
 
@@ -54,7 +55,7 @@ function JSONtoString(){
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
-    var parse = d3.time.format("%Y").parse;
+    var parse = d3.time.format("%d%m%Y").parse;
 
 
 // Transpose the data into layers
@@ -86,7 +87,7 @@ var yAxis = d3.svg.axis()
 var xAxis = d3.svg.axis()
   .scale(x)
   .orient("bottom")
-  .tickFormat(d3.time.format("%Y"));
+  .tickFormat(d3.time.format("%d-%m"));
 
 svg.append("g")
   .attr("class", "y axis")
