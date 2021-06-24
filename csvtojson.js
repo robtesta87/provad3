@@ -38,7 +38,8 @@ function JSONtoString(){
         stringa = stringa + righe[i].day + "," + righe[i].scarico + "," + righe[i].elaborazione;
 
     }
-    var data= csvJSON(stringa);
+    //var data= csvJSON(stringa);
+    var data=righe;
     console.log(data);
     var margin = { top: 20, right: 160, bottom: 35, left: 30 };
 
@@ -71,7 +72,7 @@ var y = d3.scale.linear()
   .domain([0, d3.max(dataset, function (d) { return d3.max(d, function (d) { return d.y0 + d.y; }); })])
   .range([height, 0]);
 
-var colors = ["b33040", "#d25c4d"];
+var colors = ["#d05300", "#1a5d8c"];
 
 
 // Define and draw axes
