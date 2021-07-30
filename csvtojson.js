@@ -20,12 +20,12 @@ function csvJSON(csv){
   //return JSON.stringify(result); //JSON
 }
 
-function JSONtoString(){
+function JSONtoString(csvrun2){
   var righe = [];
 
   var stringa="day,scarico,elaborazione\n";
   console.log("eccomi");
-  d3.csv("https://raw.githubusercontent.com/robtesta87/provad3/master/post processingrun2employee_file.csv", function (data2) {
+  d3.csv(document.currentScript.getAttribute('csvrun'), function (data2) {
     for (var i = 0; i < data2.length; i++) {
       righe.push(data2[i]);
     }
